@@ -1,0 +1,379 @@
+/* ===================================================================
+   Style Reset
+=================================================================== */
+html, body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #F0F0F0;
+}
+
+/* ===================================================================
+   1) Header Panel
+=================================================================== */
+#logo {
+	height: 87px;
+}
+        /* Блок выход пользователя из сайта */
+    #userLogOut {
+        text-align: right;
+        padding-top: 4px;
+        padding-right: 10px;
+    }
+    #userLogOut a {
+        text-decoration: none;
+        color: green;
+        font-size: 17px;
+    }
+    #userLogOut a:hover {
+        color: red;
+    }
+
+#lineLogo {
+	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
+	height: 47px;
+	width: 100%;
+	position: absolute;
+/*
+	background: -moz-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -moz-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -moz-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
+	background: -o-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -o-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -o-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
+	background: radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
+	background: -webkit-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -webkit-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -webkit-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
+	background-size: 15px 15px, 15px 15px, 100% 100%;
+	background-repeat: repeat, repeat, no-repeat;
+	background-position: 1px 1px, 0px 0px, center center;
+*/
+	background-color: white;
+	opacity: 0.5;
+	z-index: 1;
+	top: 39px;
+	border-top: 1px silver solid;
+	border-bottom: 1px silver solid;
+	box-shadow: #A5CFEB 0px 0px 7px;
+	text-align: center;
+}
+	#lineLogoHref {
+		line-height: 52px;
+		color: brown;
+		font-size: 42px;
+		word-spacing: 8px;
+		letter-spacing: 5px;
+		font-weight: 900;
+		font-family: 'Freestyle Script';
+		text-decoration: none;
+	}
+	#lineLogoHref:hover {
+		color: red;
+		text-decoration: none;
+	}
+
+/* ===================================================================
+   2) Content
+=================================================================== */
+#conteiner {
+	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
+	min-height: 300px;
+	width: 1300px;
+	margin: auto;
+	margin-top: 3px;
+	overflow: hidden;
+	/*background-color: white;*/
+	/*border-radius: 15px;*/
+	padding: 10px;
+	/*box-shadow: #E2E2E2 -5px 5px 5px, #E2E2E2 5px 5px 5px;*/
+	text-align: center;
+	line-height: 24px;
+}
+
+    /* 2.2) Переопределение стилей Bootstrap
+    =============================================================== */
+    .label { padding-bottom: 2px; font-size: 14px; }
+
+ul {
+	margin-top: 0px;
+	padding-left: 0px;
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+		   /* Стиль ссылок для главной страницы */
+a.newsUrl {
+	font-size: 22px;
+	color: #4F4F4F;
+	color: black;
+}
+
+a:hover {
+	color: green;
+}
+
+a:visited {
+	color: #4F4F4F;
+	color: grey;
+}
+
+#imgText {
+	font-size: 27px;
+	color: orange;
+	font-family: Tahoma;
+	margin-bottom: 10px;
+	letter-spacing: 9px;
+}
+
+#panel_title, 
+#panel_title2 {
+	text-decoration: none;
+	color: #9DA5EC;
+	height: 30px;
+	line-height: 30px;
+	background-color: #F8F8F8;
+	border: 1px solid #ebebeb;
+	font-size: 20px;
+	line-height: 30px;
+	padding: 2px 16px 2px;
+}
+#panel_title {
+    border-radius: 15px 15px 0 0;
+    box-shadow: -3px -2px 5px #E3E4FB, 3px -2px 5px #E3E4FB;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+#panel_title2 {
+	display: none;
+	border-top: none;
+	border-radius: 0px 0px 15px 15px;
+	box-shadow: #E3E4FB -3px 2px 5px, #E3E4FB 3px 2px 5px;
+}
+#panel_title:hover,
+#panel_title2:hover {
+    background-color: white;
+    cursor:pointer;
+    color: orange;
+}
+#panel {
+	border-top: 0px;
+	overflow-y: hidden;
+	overflow-x: auto;
+	line-height: 0px;
+	font-size: 0px;
+}
+
+/* ===================================================================
+   3) Обработка данных (формы)
+=================================================================== */
+.buttonFlo {
+    float: left;
+    margin-left: 20px;
+}
+.mForm {
+    /*border: 1px solid #FFB88B;*/
+	border: 1px solid white;
+	border-radius: 2px;
+	padding: 6px;
+	width: 600px;
+	background-color: #F9F9F9;
+	box-shadow: #A5CFEB 0px 0px 7px;
+	border-radius: 10px;
+	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
+}
+.form1 {
+	float: left;
+	margin-left: 20px;
+}
+.form2 {
+	float: right;
+	margin-right: 20px;
+}
+.mForm input, #m_textarea1 {
+	border: 2px solid #A2A2A2;
+	border-radius: 2px;
+	padding: 2px;
+	background-color: #F9F9F9;
+}
+.mFormText {
+	font-size: 21px;
+	color: navy;
+	font-weight: normal;
+	font-family: Calibri;
+}
+    label.mFormText {
+        vertical-align: top;
+        font-size: 17px;
+        font-family: Arial;
+    }
+.inputData {
+	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
+	width: 376px;
+	min-width: 80px;
+    max-width: 420px;
+    min-height: 80px;
+	max-height: 120px;
+	border: 2px solid #A2A2A2;
+	padding: 5px;
+	border-radius: 5px;
+	line-height: 16px;
+}
+                /* Отдельные размеры для поля ввода названия ссылки */
+.inputDataTitle {
+    width: 345px;
+    min-height: 16px;
+    height: 26px;
+}
+.clearButtC {
+	display: inline-block;
+	text-align: center;
+	margin: auto;
+	font-family: Arial;
+	background-color: #fff;
+	border: 1px solid #ccc;
+    color: grey;
+	border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 0;
+    margin-top: 15px;
+    padding: 6px 12px;
+}
+
+.clearButtC:hover {
+	color: orange;
+	background-color: #F0F0F0;
+}
+    /* Кнопка перейти к управлению контентом */
+.goAdmin {
+    margin-top: 0;
+    float: left;
+    background-color: #F0F8FF;
+}
+#clearBoth {
+    clear: both;
+}
+    /* блок розпорка */
+.empt {
+    margin-bottom: 0;
+    margin-top: 15px;
+    padding: 6px 12px;
+	display: inline-block;
+	padding-left: 350px;
+}
+.sendInp {
+	cursor: pointer;
+}
+.sendInp:hover {
+	background-color: orange;
+}
+.formBut {
+	border: none;
+	box-shadow: none;
+	background-color: white;
+	margin-top: 12px;
+}
+.inpButt {
+	background-color: #F8D1D1;
+}
+.formButLeft {
+	float: left;
+	margin-top: -8px;
+}
+
+    /* Добавление значка * для полей типа required (соотв. rules модели) */
+    div.required label:after {
+        content: " *";
+        color: #e13431;
+    }
+
+    /* .) 
+    =============================================================== */
+
+
+
+/* ===================================================================
+   4) Переопределение стилей Bootstrap
+=================================================================== */
+			/* Настройки для ссылок которые очищают данные в БД */
+.clearButt {
+    color: white;
+}
+.clearButt:visited {
+    color: white;
+}
+.clearButt {
+	margin-bottom: 10px;
+	float: right;
+	margin-right: 10px;
+}
+
+/* ===================================================================
+   5) Стили для страницы с списком всех новостей (control/news)
+=================================================================== */
+.gridNews table tbody tr td { /* заголовок таблицы */
+	height: 20px;
+}
+.gridNews table thead tr th { /* заголовок таблицы */
+	text-align: center;
+	background-color: #FEFAE9;
+}
+.gridNews table tbody tr td + td { /* средняя ячейка */
+	text-align: left;
+	/*vertical-align: middle;*/
+	width: 840px;
+	/* Реализация обрезки длинной строки */
+	white-space: nowrap;
+	max-width: 840px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.gridNews table tbody tr td + td + td { /* последняя ячейка */
+	text-align: center;
+    vertical-align: middle;
+	width: 100px;
+}
+.gridNews table thead tr {
+	overflow: hidden;
+}
+
+/* 2-е линии для таблицы */
+.gridNews .table-bordered thead tr th,
+.gridNews .table-bordered thead tr td,
+.gridNews .table-bordered tbody tr td {
+	border-right: 2px solid #ddd;
+}
+.gridNews .table-bordered {
+	border: 2px solid #ddd;
+}
+
+.gridNews .gridUrlIn { /* изменение цвета ссылок внутри таблицы */
+	color: #333;
+}
+
+	/* Изменение отступа для пагинации */
+.pagination {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.formUpNews {
+	margin: auto;
+}
+
+/* ===================================================================
+   5) Стили для страницы с списком всех картинок (control/images)
+=================================================================== */
+.gridImg table tbody tr td { /* средняя ячейка */
+	text-align: left;
+	width: 840px;
+	/* Реализация обрезки длинной строки */
+	white-space: nowrap;
+	max-width: 840px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.gridImg table tbody tr td + td { /* последняя ячейка */
+	text-align: center;
+	width: 100px;
+}
