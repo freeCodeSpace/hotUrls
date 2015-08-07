@@ -34,3 +34,11 @@ AppAssetAdm::register($this);
 <?= Html::a('Удалить', ['/control/news-delete', 'id' => $model->news_id], ['class' => 'btn btn-danger']); ?>
 <br><br>
 <?php ActiveForm::end(); ?>
+
+<br><b>
+<?php
+    // Если есть, вывести ошибку о возможности изменения
+    // данных (для данного пользователя) используется в beforeValidate (в модели).
+    echo $model->errors['accessErrorMsg'][0];
+?>
+</b>

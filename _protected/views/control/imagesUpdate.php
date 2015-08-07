@@ -33,3 +33,11 @@ AppAssetAdm::register($this);
 
 <br>
 <img src="<?= $model->url; ?>">
+
+<br><b>
+<?php
+    // Если есть, вывести ошибку о возможности изменения
+    // данных (для данного пользователя) используется в beforeValidate (в модели).
+    echo $model->errors['accessErrorMsg'][0];
+?>
+</b>

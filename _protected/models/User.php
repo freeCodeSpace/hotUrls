@@ -23,24 +23,13 @@ use yii\web\IdentityInterface;
 
 /*
     Эта модель используется как для Входа так и для регистрации пользователя.
-    Для теста (входа) в DB создать пользователя с данными (либо воспольз. формой из меню):
-    username:      creator01
-    password_hash: $2y$13$Svv8vkYRmmUmlPmm9msH6uHvROvN85pDcxJJZYFqDKfoclr/4aATe
-                   соответствует: 123456
-    email: creator01@i.ua
-    auth_key: в БД
-        - Основным образом влияет на запоминание пользователя (т.е. если войти в систему а затем закрыть браузер
-          то в следующий раз при обращении к сайту - пользователь будет в системе соотв. его cookie и этому ключу
-          но если в процессе удалить из БД значение auth_key, то при следующем обращении пользователя к сайту
-          он не будет распознан системой)
-        - Ключ должен быть уникальным для каждого индивидуального пользователя
-        - Он может быть использован для проверки подлинности личности пользователя
-        - Пространство таких ключей должно быть достаточно большим, что бы предотвратить взлом через удостовер. личности
-    created_at: в БД
-    updated_at: в БД
 */
 class User extends ActiveRecord implements IdentityInterface
 {
+
+    // Значение административного статуса пользователя в БД.
+    private static $adminStatus = 'master'; 
+
     public static function tableName()
     {
         return '{{%user}}';
@@ -132,4 +121,22 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->auth_key = Yii::$app->security->generateRandomString();
     }
+
+    /**
+     * Проверка на допустимое статус пользователя.
+     * Может ли пользователь изменять данные в БД
+     * Вызывается напрямую из:
+     *   model: News->beforeValidate, Images->beforeValidate; control
+     *   Controller: Control->ClearNews, ClearImages, NewsDelete, ImagesDelete
+     * Тестовая заглушка (имитация ролей)
+     */
+    public function checkUser() {
+        $userName = Yii::$app->user->identity->username;
+        $status = User::findByUsername($userName)->status;
+        if ( $status != self::$adminStatus ) {
+            return 'Данная учетная запись: ' .$userName. ' не позволяет работать с данными в БД.';
+        }
+        return false;
+    }
+
 }

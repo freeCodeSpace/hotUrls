@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\User;
 
 /**
  * This is the model class for table "images".
@@ -12,6 +13,7 @@ use Yii;
  */
 class Images extends \yii\db\ActiveRecord
 {
+
     /**
      * @inheritdoc
      */
@@ -27,7 +29,7 @@ class Images extends \yii\db\ActiveRecord
     {
         return [
             [['url'], 'required'],
-            [['url'], 'string', 'max' => 5000]
+            [['url'], 'string', 'max' => 5000],
         ];
     }
 
@@ -41,4 +43,21 @@ class Images extends \yii\db\ActiveRecord
             'url' => 'Url:',
         ];
     }
+
+    /**
+     * Проверка условия до выполнения валидации.
+     * Сообщение об ошибке, будет выведенно в соотв. файле view.
+     * Проверка на допустимое имя пользователя.
+     * Тестовая заглушка (имитация ролей)
+     */
+    public function beforeValidate() {
+        $msgError = User::checkUser();
+        if ( $msgError != false ) { // проверка на права доступа на изменен. данных (доступа нет есть)
+            $this->addError('accessErrorMsg', $msgError);
+            return false; // остановить дальнейшую валидацию
+        }
+        // если условие выше пропущено, вызвать стандартную обработку
+        return parent::beforeValidate();
+    }
+
 }

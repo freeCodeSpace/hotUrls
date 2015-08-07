@@ -19,21 +19,23 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
  <!-- 1)Head -->
-    <div id="logo">
-
-     <!-- Блок выход пользователя из сайта -->
-        <div id="userLogOut">
-            <?php
-                if (Yii::$app->user->isGuest === false) {
-                    echo Html::a('LogOut', ['/protect/logout']);
-                }
-            ?>
-        </div>
-
-        <div id="lineLogo">
-            <?= Html::a('News and URLs', Yii::$app->homeUrl, ['id' => 'lineLogoHref']); ?>
+    <div id="header">
+        <div>
+            <?= Html::a('Hot Urls', Yii::$app->homeUrl, ['class' => 'headerTitle']); ?>
+            <span id="userBox">
+                <?php
+                    if (Yii::$app->user->isGuest === false) {
+                        echo "User: <b>" . Yii::$app->user->identity->username . "</b> " .
+                            Html::a('LogOut', ['/protect/logout'], ['class' => 'userLink']);
+                    } else {
+                        echo "Выполнить вход: " .
+                            Html::a('LogIn', ['/protect/login'], ['class' => 'userLink LogIn']);
+                    }
+                ?>
+            </span>
         </div>
     </div>
+
  <!-- 2)Content -->
     <div id="conteiner">
      <!-- 2.1)URLs -->

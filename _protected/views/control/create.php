@@ -14,11 +14,11 @@ AppAssetAdm::register($this);
 <?= Html::a('Таблица images', ['/control/images'], ['class' => 'btn btn-default buttonFlo']); ?>
 <br><br>
 
-  <!-- Форма Добавление News -->
-    <?php $form = ActiveForm::begin([
-        // 'id' => 'my-form', // указать id-формы (по умолч. с bootstrap id=w0)
-        'options' => ['class' => 'mForm form1'], // указать класс формы
-    ]) ?>
+<!-- Форма Добавление News -->
+<?php $form = ActiveForm::begin([
+    // 'id' => 'my-form', // указать id-формы (по умолч. с bootstrap id=w0)
+    'options' => ['class' => 'mForm form1'], // указать класс формы
+]) ?>
     <br>
     <span class="mFormText" style="color: green;">Добавление News:</span><br><br>
 
@@ -30,17 +30,23 @@ AppAssetAdm::register($this);
         'class' => 'inputData',
     ])->label($news->getAttributeLabel('url'), ['class' => 'mFormText']); // с заданием класса для label ?>
 
-
     <?= Html::submitButton('Добавить', ['class' => 'btn btn-success']) ?>
     <br>
+
     <!-- Очистка News -->
     <?= Html::a('Очистить News', ['/control/clear-news'], ['class' => 'btn btn-danger clearButt']); ?>
-    <?php ActiveForm::end(); ?>
+    <!-- Сообщение (для модели news) о результате проверки возможности добавления данных -->
+    <?php
+    // Вывести ошибку, используется в beforeValidate (в модели).
+    if (!empty($news->errors)) {
+        echo "<br><br><b>" . $news->errors['accessErrorMsg'][0] . "</b>";
+    } ?>
+<?php ActiveForm::end(); ?>
 
-  <!-- Форма Добавление Img -->
-    <?php $form = ActiveForm::begin([
-        'options' => ['class' => 'mForm form2'],
-    ]) ?>
+<!-- Форма Добавление Img -->
+<?php $form = ActiveForm::begin([
+    'options' => ['class' => 'mForm form2'],
+]) ?>
     <br>
     <span class="mFormText" style="color: green;">Добавление Img:</span><br><br>
 
@@ -50,6 +56,13 @@ AppAssetAdm::register($this);
 
     <?= Html::submitButton('Добавить', ['class' => 'btn btn-success']) ?>
     <br>
+
     <!-- Очистка Img -->
     <?= Html::a('Очистить Images', ['/control/clear-images'], ['class' => 'btn btn-danger clearButt']); ?>
-    <?php ActiveForm::end(); ?>
+    <!-- Сообщение (для модели images) о результате проверки возможности добавления данных -->
+    <?php
+    // Вывести ошибку, используется в beforeValidate (в модели).
+    if (!empty($images->errors)) {
+        echo "<br><br><b>" . $images->errors['accessErrorMsg'][0] . "</b>";
+    } ?>
+<?php ActiveForm::end(); ?>

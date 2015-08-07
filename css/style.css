@@ -5,66 +5,78 @@ html, body {
 	padding: 0px;
 	margin: 0px;
 	background-color: #F0F0F0;
+    box-sizing: content-box;
 }
 
 /* ===================================================================
    1) Header Panel
 =================================================================== */
-#logo {
-	height: 87px;
+#header {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-size: 0;
+    border-top: 1px silver solid;
+    border-bottom: 1px silver solid;
+    box-shadow: #A5CFEB 0px 0px 7px;
+    line-height: 0;
+    margin-top: 20px;
+    margin-bottom: 15px;
 }
-        /* Блок выход пользователя из сайта */
-    #userLogOut {
-        text-align: right;
-        padding-top: 4px;
-        padding-right: 10px;
-    }
-    #userLogOut a {
-        text-decoration: none;
-        color: green;
-        font-size: 17px;
-    }
-    #userLogOut a:hover {
-        color: red;
+    /* Контейнер для элементов Заголовка */
+    #header div {
+        width: 1300px;
+        margin: 0 auto;
+        padding: 0;
+        text-align: center;
+        box-sizing: content-box;
+        font-size: 0;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        height: 40px;
+        line-height: 40px;
+        position: relative;
     }
 
-#lineLogo {
-	box-sizing: content-box; /* корректировка для перекрытия стиля bootstrap */
-	height: 47px;
-	width: 100%;
-	position: absolute;
-/*
-	background: -moz-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -moz-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -moz-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
-	background: -o-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -o-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -o-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
-	background: radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
-	background: -webkit-radial-gradient( center, circle, rgba(255,255,255,35), rgba(255,255,255,10) 60%, rgba(255,255,255,0) 21% ), -webkit-radial-gradient(center,	circle, rgba(0,0,0,.5), rgba(0,0,0,0) 80%, rgba(0,0,0,0.15) 	1% ), -webkit-radial-gradient(center, circle farthest-corner, #F5EDF7, #E4E6FA);
-	background-size: 15px 15px, 15px 15px, 100% 100%;
-	background-repeat: repeat, repeat, no-repeat;
-	background-position: 1px 1px, 0px 0px, center center;
-*/
-	background-color: white;
-	opacity: 0.5;
-	z-index: 1;
-	top: 39px;
-	border-top: 1px silver solid;
-	border-bottom: 1px silver solid;
-	box-shadow: #A5CFEB 0px 0px 7px;
-	text-align: center;
-}
-	#lineLogoHref {
-		line-height: 52px;
-		color: brown;
-		font-size: 42px;
-		word-spacing: 8px;
-		letter-spacing: 5px;
-		font-weight: 900;
-		font-family: 'Freestyle Script';
-		text-decoration: none;
-	}
-	#lineLogoHref:hover {
-		color: red;
-		text-decoration: none;
-	}
+        /* Название приложения/ссылка на главную */
+        #header div .headerTitle {
+            margin: 0;
+            padding: 0;
+            font-family: Tahoma;
+            font-variant: small-caps;
+            font-size: 32px;
+            color: #CB8D8D;
+            font-weight: 900;
+            box-sizing: content-box;
+            outline: none;
+            letter-spacing: 7px;
+            text-decoration: none;
+        }
+        #header div .headerTitle:hover {
+            color: #F87878;
+        }
+
+        /* Блок пользовательского входа */
+        #userBox {
+            position: absolute;
+            font-size: 18px;
+            right: 0px;
+            color: green;
+            font-family: Calibri;
+            font-weight: normal;
+        }
+            #userBox .userLink {
+                color: grey;
+                font-weight: 900;
+                padding-left: 30px;
+            }
+            #userBox .LogIn {
+                padding-left: 5px;
+            }
+            #userBox .userLink:hover {
+                color: red;
+            }
 
 /* ===================================================================
    2) Content
