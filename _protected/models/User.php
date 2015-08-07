@@ -130,9 +130,9 @@ class User extends ActiveRecord implements IdentityInterface
      *   Controller: Control->ClearNews, ClearImages, NewsDelete, ImagesDelete
      * Тестовая заглушка (имитация ролей)
      */
-    public function checkUser() {
+    public static function checkUser() {
         $userName = Yii::$app->user->identity->username;
-        $status = User::findByUsername($userName)->status;
+        $status = User::findOne(['username' => $userName])->status;
         if ( $status != self::$adminStatus ) {
             return 'Данная учетная запись: ' .$userName. ' не позволяет работать с данными в БД.';
         }
