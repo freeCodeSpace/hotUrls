@@ -70,12 +70,14 @@ html, body {
                 color: grey;
                 font-weight: 900;
                 padding-left: 30px;
+                text-decoration: none;
             }
             #userBox .LogIn {
                 padding-left: 5px;
             }
             #userBox .userLink:hover {
                 color: red;
+                text-decoration: none;
             }
 
 /* ===================================================================
