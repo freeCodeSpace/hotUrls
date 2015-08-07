@@ -31,6 +31,7 @@ AppAssetAdm::register($this);
         <b>Имя: </b> nick<br>
         <b>psw: </b> 123456<br><br>
     </div>
+    <b>(!) Изменение данных не доступно (!)</b><br> для данной гостевой учетной записи.<br><br>
 
     <div class="form-group">
         <div class="col-lg-offset-1 col-lg-11">
